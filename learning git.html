@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <title>Learning git commands</title>
+        <style>
+            body{
+                background-image:linear-gradient(green,blue,red,black);
+                margin: 5%;
+            }
+
+            #ans{
+                background-color: rgb(62, 150, 226);
+                margin-bottom: 64px;
+            }
+
+            #q{
+                background-color: rgb(43, 50, 56);
+            }
+            .syntax{
+                background-color: brown;
+                font-size: large;
+            }
+            td{
+                padding: 1%;
+            }
+            th{
+                padding: 1%;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1 id="q"><bold>Q 1.</bold>What is git ?</h1>
+        <h2 id="ans"> <strong>Ans 1.</strong>
+            <ul>Git is software for tracking changes in any set of files,
+            usually used for coordinating work among programmers collaboratively developing source code during software development.</ul>
+            <ul>Git commands are used to operate various git operations.</ul>
+        </h2>
+
+
+        <h1 id="q"><bold>Q 2.</bold>What is github ?</h1>
+        <h2 id="ans"> <strong>Ans 2.</strong>
+            <ul>Github is repository (a kind of online folder) where your project is saved along with all it changes tracked.</ul>
+            <ul>Github is a kind of cloud service to store the codes and all its modifications with time.</ul>
+        </h2>
+
+        <h1 id="q"><bold>Q 3.</bold>Mention some important git commands.</h1>
+        <h2 id="ans"> <strong>Ans 3.</strong>
+            <table border="2px">
+                <tr>
+                    <th>git-command</th>
+                    <th>use</th>
+                </tr>
+                <tr>
+                    <th>git clone</th>
+                    <td>Git clone is a command for downloading existing source code from a remote repository (like Github, for example).
+                        In other words, Git clone basically makes an identical copy of the latest version of a project in
+                         a repository and saves it to your computer.
+                        <br/>
+                        <p class="syntax"><strong>Syntax:</strong> clone repository-link</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>git status</th>
+                    <td>
+                        The Git status command gives us all the necessary information about the current branch. like
+                        <ul>Whether the current branch is up to date</ul>
+                        <ul>Whether there is anything to commit, push or pull</ul>
+                        <ul>Whether there are files created, modified or deleted</ul>
+                        <p class="syntax"> <strong>Syntax:</strong> git status</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>git add</th>
+                    <td>
+                        When we create, modify or delete a file, these changes will happen in our local and won't be 
+                        included in the next commit (unless we change the configurations).
+                        <br/>We need to use the git add command to include the changes of a file(s) into our next commt. 
+                        <ul>To add everything at once: use -A (inplace of file_name)</ul>
+                        <p class="syntax"> <strong>Syntax:</strong> git add file_name.(with extension)</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>git commit</th>
+                    <td>
+                        Once we reach a certain point in development, we want to save our changes (maybe after a specific task or issue).
+                        <br/>Git commit is like setting a checkpoint in the development process which you can go back to later if needed.
+                        <br/>We also need to write a short message to explain what we have developed or changed in the source code.
+                        <p class="syntax"> <strong>Syntax:</strong> git commit -m "commit message"</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Git push</th>
+                    <td>
+                        After committing your changes, the next thing you want to do is send your 
+                        changes to the remote server. Git push uploads your commits to the remote repository.
+                        <br/>Important: Git push only uploads changes that are committed.
+                        <br/>We also need to write a short message to explain what we have developed or changed in the source code.
+                        <p class="syntax"> <strong>Syntax:</strong> git push -u origin branch_name</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Git branch</th>
+                    <td>
+                        By using branches, several developers are able to work in parallel on the same project simultaneously.
+                        <br/>We can use the git branch command for creating, listing and deleting branches.
+
+                        <p class="syntax"> <strong>Creating a new branch:</strong> git branch branch_name</p>
+                        <p class="syntax"> <strong>To push the new branch into the remote repository:</strong> git push -u <remote> branch_name</branch-name></p>
+                        <p class="syntax"> <strong>Viewing branches: </strong> git branch or git branch --list</p>
+                        <p class="syntax"> <strong>Deleting a branch: </strong> git branch -d branch_name</p>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Git checkout</th>
+                    <td>
+                        We use git checkout mostly for switching from one branch to another. We can also use it for checking out files and commits.
+                        <br/><span class="syntax"> <strong>Syntax:</strong> git checkout name-of-your-branch</span>
+                        <br/><span class="syntax"> <strong>Syntax:</strong> git checkout commit_id(to which commit you want to go)</span>
+                        
+                        <br/><br/>The below command creates a new branch in your local (-b stands for branch) and
+                        checks the branch out to new right after it has been created.
+                        <p class="syntax"> <strong>Syntax:</strong> git checkout -b name-of-your-branch</p>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>Git merge</th>
+                    <td>
+                        When you've completed development in your branch and everything works fine, the final step is merging the branch with the 
+                        parent branch (dev or master). This is done with the git merge command.
+                        <br/>It's important to remember that you first need to be on the specific branch that you want to merge with your feature branch.
+                        <br/>For example, when you want to merge your feature branch into the dev branch: First you should switch to the dev branch:
+                        <p class="syntax"> <strong>Syntax:</strong> git merge branch_name</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Git log</th>
+                    <td>
+                        It shows all the previous commits.
+                        <p class="syntax"> <strong>Syntax:</strong> git log</p>
+                    </td>
+                </tr>
+
+            </table>
+        </h2>
+
+        <h1 id="q"><bold>Q 4.</bold>git remote add origin https://github.com/ShubhamPal05/learning-git</h1>
+        <h2 id="ans"> <strong>Ans 2.</strong>
+            <ul>remote means online and origin is the link where the folder is originating from</ul>
+            <ul>Github is a kind of cloud service to store the codes and all its modifications with time.</ul>
+        </h2>
+
+    </body>
+
+</html>
